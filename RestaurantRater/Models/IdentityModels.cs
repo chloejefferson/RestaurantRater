@@ -18,6 +18,7 @@ namespace RestaurantRater.Models
         }
     }
 
+    //We will ignore this and create our own!!!
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
