@@ -91,5 +91,20 @@ namespace RestaurantRater.Controllers
             }
             return View(restaurant);//If not valid, return back to the edit view with the restaurant that THEY entered in the edit view again.
         }
+
+        //GET: Restaurant/Details/{id}
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Restaurant restaurant = _db.Restaurants.Find(id);
+            if (restaurant == null)
+            {
+                return HttpNotFound();
+            }
+            return View(restaurant);
+        }
     }
 }
